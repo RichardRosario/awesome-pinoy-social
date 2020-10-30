@@ -1,0 +1,27 @@
+[tool.pytest.ini_options]
+addopts = "--nomigrations"
+DJANGO_SETTINGS_MODULE = "project.testing_settings"
+testpaths = ["social"]
+
+[tool.coverage.report]
+fail_under = 100
+omit = [
+    "*/commands/*",
+    "*/migrations/*",
+    "*/apps.py",
+]
+show_missing = true
+skip_covered = true
+
+[tool.isort]
+line_length = 88
+known_third_party = [
+    "django",
+    "factory",
+    "test_plus",
+]
+known_first_party = [
+    "users",
+]
+multi_line_output = 3
+include_trailing_comma = true
